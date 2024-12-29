@@ -6,7 +6,7 @@ from datetime import datetime
 REPO_PATH = r"C:\Users\rudra\Downloads\f54b3997-4268-4654-ac77-1a03ec91635c_Export-cc977a27-b371-48d2-acc6-5b4e0ccd48b5\output_files"  # Path to your Git repo
 FILES_DIR = REPO_PATH  # Folder containing new files
 BRANCH_NAME = "main"  # Your branch name
-COMMIT_MESSAGE_TEMPLATE = "Daily commit for {}"
+COMMIT_MESSAGE_TEMPLATE = "commit for {}"
 COMMIT_FILE_LOG = "commit_file_log.txt"  # Log to track the last committed file
 
 def get_file_to_commit():
