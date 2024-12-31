@@ -35,12 +35,21 @@ if untracked_files:
     commit_message = f"Commit for {file_to_push} on {datetime.date.today()}"
     subprocess.run(["git", "commit", "-m", commit_message])
 
+    # Stage the pushed_files.txt file
+    subprocess.run(["git", "add", pushed_files_file])
+
     # Push the file to the repository
-    subprocess.run(["git", "push"])
+    subprocess.run(["git", "push", "--set-upstream", "origin", "main"])
 
     # Mark the file as pushed
     with open(pushed_files_file, "a") as file:
         file.write(f"{file_to_push}\n")
+
+    # Commit the updated pushed_files.txt
+    subprocess.run(["git", "commit", "-m", "Update pushed_files.txt"])
+
+    # Push the commit of updated pushed_files.txt
+    subprocess.run(["git", "push"])
 
     print(f"Successfully pushed {file_to_push}")
 else:
