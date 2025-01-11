@@ -18,3 +18,4 @@
 .git
 .git
 .git
+.git
