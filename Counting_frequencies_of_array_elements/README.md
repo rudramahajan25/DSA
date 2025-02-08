@@ -1,3 +1,3 @@
 # Counting frequencies of array elements
 
-No explanation provided.
+# Counting frequencies of array elements

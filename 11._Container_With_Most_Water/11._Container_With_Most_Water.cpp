@@ -26,3 +26,21 @@ n == height.length
 2 <= n <= 105
 0 <= height[i] <= 104
 */
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int water = 0;
+        int i=0,j=height.size()-1;
+        while(i<j)
+        {
+            int level = min(height[i],height[j]);
+            water = max(water,(j-i)*level);
+            while(height[i]<=level && i<j)
+            i++;
+            while(height[j]<=level && i<j)
+            j--;
+        }
+        return water;
+
+    }
+};
